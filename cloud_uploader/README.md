@@ -1,12 +1,22 @@
-First we started with our hashbang.
+# S3 Upload Script
 
-Second I put up an if statement suggestion if the file that is to be uploaded ($1) if it is empty to echo a message and tell
-the user to upload the file.
+This script facilitates the uploading of files or directories to an Amazon S3 bucket using the AWS Command Line Interface (CLI).
 
-Third i gave the first pushed argument the $1 a variable of FILE. 
+## Prerequisites
+- AWS CLI installed and configured with necessary permissions.
+- Access to the specified S3 bucket.
 
-using aws s3 cp command i pushed the $FILE variable to the desired bucket of our choice. 
+## Usage
+1. Ensure the script is executable: `chmod +x CloudUploaderCli.sh`
+2. Execute the script with the file or directory path as an argument: `./CloudUploaderCli.sh <file_or_directory_path>`
 
+## Parameters
+- `<file_or_directory_path>`: Path to the file or directory to be uploaded.
 
-In the end i used if [ $? -eq 0 ]; then echo "Success" Else echo "failed" so if the file/argument passed to the script was uploaded
-succesfully to the aws s3 bucket it would show successs or else it would show failed. 
+## Configuration
+- Replace `BUCKET_NAME` with your S3 bucket name before using the script.
+
+## Example
+```bash
+./upload_to_s3.sh /path/to/file.txt
+ 
